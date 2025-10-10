@@ -1,5 +1,5 @@
-import { Button } from "@/components/common/Button";
-import { TextInput } from "@/components/common/Input/TextInput";
+import { Button } from "@/modules/Common/components/Button";
+import { TextInput } from "@/modules/Common/components/Input/TextInput";
 import Link from "next/link";
 
 export function LoginView() {
