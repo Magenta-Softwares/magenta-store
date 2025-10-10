@@ -28,7 +28,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(function 
         bg-pink-500 
         hover:bg-pink-600
         text-white
-        font-medium 
+        font-bold
         cursor-pointer
         transition-all
         `,
