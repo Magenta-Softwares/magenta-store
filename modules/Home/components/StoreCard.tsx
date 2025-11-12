@@ -11,7 +11,7 @@ interface StoreCardProps {
 
 export const StoreCard = ({ image, name, role }: StoreCardProps) => {
   return (
-    <div className='bg-white rounded-xl shadow-sm border border-stone-200 p-5 flex flex-col items-center text-center gap-5'>
+    <div className='w-full bg-white rounded-xl shadow-sm border border-stone-200 p-5 flex flex-col items-center text-center gap-5'>
       <figure>
         <Image
           src={image}

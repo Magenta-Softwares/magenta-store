@@ -1,5 +1,6 @@
 import { StoreCard } from "../components/StoreCard";
 import { Button } from "@/modules/Common/components/Button";
+import { Carousel } from "@/modules/Common/components/Carousel/Carousel";
 import { IconCircleDashedPlus, IconUsersGroup } from "@tabler/icons-react";
 
 // ! Estas tiendas son de ejemplo. Cuando se conecte con el backend, se debe eliminar.
@@ -22,6 +23,18 @@ const DUMMY_STORES = [
     role: "Cajero",
     image: "https://placehold.co/600x400",
   },
+  {
+    id: "4",
+    name: "Librería Central",
+    role: "Propietario",
+    image: "https://placehold.co/600x400",
+  },
+  {
+    id: "5",
+    name: "Cafetería La Esquina",
+    role: "Administrador",
+    image: "https://placehold.co/600x400",
+  },
 ];
 
 export default function ChoseStoreView() {
@@ -32,16 +45,17 @@ export default function ChoseStoreView() {
         <p className='text-lg text-stone-600'>Selecciona una tienda para empezar a administrar.</p>
       </div>
 
-      {/* ! Estuve horas tratando de hacer o encontrar un carousel. De momento se quedara como una grid. */}
-      <div className='w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6'>
-        {DUMMY_STORES.map((store) => (
-          <article key={store.id}>
-            <StoreCard name={store.name} role={store.role} image={store.image} />
-          </article>
-        ))}
-      </div>
+      <Carousel
+        content={DUMMY_STORES.map((store) => {
+          return {
+            id: store.id,
+            slide: <StoreCard name={store.name} role={store.role} image={store.image} />,
+          };
+        })}
+        itemsPerView={3}
+      />
 
-      <div className=''>
+      <div>
         <Button leftIcon={<IconCircleDashedPlus />}>Crea una nueva tienda</Button>
         <Button leftIcon={<IconUsersGroup />} variant='secondary' className='ml-2'>
           Unirse a una tienda
